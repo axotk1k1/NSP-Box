@@ -176,7 +176,7 @@ class NupPanel(AmbientFrame):
         for control in (self.title_entry,self.art_button,self.clear_art_button):control.configure(state='normal' if folder and not self.busy else 'disabled')
     def pick_input(self):
         if self.operation.get()==OPERATIONS[0]:path=filedialog.askdirectory(parent=self,title='Choose extracted game or base/updates/dlc bundle')
-        else:path=filedialog.askopenfilename(parent=self,title='Choose package',filetypes=[('NSP packages','*.nsp')] if self.operation.get()==OPERATIONS[1] else [('NUP archives','*.nup')])
+        else:path=filedialog.askopenfilename(parent=self,title='Choose package',filetypes=[('NSP packages','*.nsp *.NSP'),('All files','*')] if self.operation.get()==OPERATIONS[1] else [('NUP archives','*.nup *.NUP'),('All files','*')])
         if path:self.input.set(path);self.scan()
     def receive_drop(self,path):
         if self.busy or self._art_editor is not None:return

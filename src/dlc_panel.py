@@ -110,7 +110,7 @@ class DlcPanel(AmbientFrame):
             self.folder.set(folder); self.title_id.set(''); self.scan()
 
     def pick_base(self):
-        path = filedialog.askopenfilename(parent=self, title='Choose the base-game NSP', filetypes=[('Game packages','*.nsp')])
+        path = filedialog.askopenfilename(parent=self, title='Choose the base-game NSP', filetypes=[('Game packages','*.nsp *.NSP'),('All files','*')])
         if path:
             self.base_game.set(path)
             if self.folder.get().strip(): self.scan()
