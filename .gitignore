@@ -1,31 +1,3 @@
-# Generated content stays out of Git.
-/build/
-/dist/
-/release/
-/test-work/
-/.venv/
+.venv/
 __pycache__/
-*.py[cod]
-*.partial
-*.xci
-*.nsp
-*.nca
-*.npdm
-*.nsz
-*.xcz
-*.romfs
-*.report.json
-*.error.txt
-*.exe
-*.zip
-.env
-.env.*
-prod.keys*
-title.keys*
-
-.venv-linux/
-local-linux-build/
-
-# Local previews and NUP outputs
-/dist-*/
-*.nup
+*.pyc

@@ -249,7 +249,7 @@ class App(Layout,tk.Tk):
 
     def setup_compatibility(self,parent):
         folder=filedialog.askdirectory(parent=parent,title='Choose the emulator keys folder',
-            initialdir=str(Path(os.environ.get('APPDATA',Path.home()))/'eden'/'keys'))
+            initialdir=str((Path(os.environ['APPDATA']) if 'APPDATA' in os.environ else Path(os.environ.get('XDG_DATA_HOME') or Path.home()/'.local'/'share'))/'eden'/'keys'))
         if not folder:return
         try:
             result=compatibility.install(folder)
